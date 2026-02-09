@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Extreme Robotics Lab</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+    </style>
+</head>
+<body data-barba="wrapper" class="research-page">
+    <div data-barba="container" data-barba-namespace="research">
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="brand-area">
+                <a href="https://www.birmingham.ac.uk" target="_blank">
+                    <img src="../assets/UoB.png" alt="University of Birmingham" class="logo-img uob-logo">
+                </a>
+                <span class="vertical-divider"></span>
+                <a href="../index.html">
+                    <img src="../assets/ERL.png" alt="Extreme Robotics Lab" class="logo-img erl-logo">
+                </a>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="research.html" class="active">Research</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="press.html">Press</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="#contact" class="btn-contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header header-research" id="top">
+        <div class="container">
+            <h1 class="page-title">Research @ ERL</h1>
+            <p class="page-subtitle">Pioneering autonomous systems for unstructured and hazardous environments.</p>
+        </div>
+    </section>
+
+    <!-- <section class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">Core Competencies</h2>
+            <div class="research-grid">
+                
+                <div class="research-card">
+                    <div class="card-icon"><i class="fas fa-hand-rock"></i></div>
+                    <h3>Robotic Grasping & Manipulation</h3>
+                    <p>We develop robust algorithms for grasping unknown objects in clutter. Our work spans model-free grasp planning, bi-manual manipulation with dual-arm systems, and dynamic control for heavy-duty industrial arms handling hazardous waste.</p>
+                    <ul class="tech-tags">
+                        <li>Bi-Manual Control</li>
+                        <li>Force/Torque Sensing</li>
+                        <li>Tactile Feedback</li>
+                    </ul>
+                </div>
+
+                <div class="research-card">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Computer Vision & Perception</h3>
+                    <p>Our vision systems operate in extreme conditions—low light, smoke, and radiation. We specialize in 3D reconstruction, visual servoing, and detecting texture-less objects (like nuclear fuel rods) using deep learning and sensor fusion.</p>
+                    <ul class="tech-tags">
+                        <li>3D SLAM</li>
+                        <li>Visual Servoing</li>
+                        <li>Sensor Fusion (Radar/Lidar)</li>
+                    </ul>
+                </div>
+
+                <div class="research-card">
+                    <div class="card-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Human-Robot Teaming</h3>
+                    <p>In safety-critical zones, full autonomy isn't always possible. We pioneer "Variable Autonomy" and "Shared Control" frameworks where AI assists human operators, reducing cognitive load during complex teleoperation tasks.</p>
+                    <ul class="tech-tags">
+                        <li>Teleoperation</li>
+                        <li>Haptic Feedback</li>
+                        <li>Intent Recognition</li>
+                    </ul>
+                </div>
+
+                <div class="research-card">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>From reinforcement learning for contact-rich manipulation to vision-language models for high-level reasoning. We apply state-of-the-art AI to solve physical engineering problems in real-world unstructured environments.</p>
+                    <ul class="tech-tags">
+                        <li>Reinforcement Learning</li>
+                        <li>Sim-to-Real Transfer</li>
+                        <li>Physics-Informed AI</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="research-sections">
+                <article class="research-section">
+                    <div class="research-header">
+                        <h3>Robotic Grasping & Manipulation</h3>
+                        <p>Robust manipulation in clutter and hazardous environments.</p>
+                    </div>
+                    <div class="research-works">
+                        <article class="work-card">
+                            <div class="work-media">
+                                <video class="work-video autoplay-onview" muted playsinline preload="metadata" loop>
+                                    <source src="../assets/videos/erl_grasping.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <h4>Model-free Grasp Planning</h4>
+                            <p>Fast grasp synthesis for cluttered scenes.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <video class="work-video autoplay-onview" muted playsinline preload="metadata" loop>
+                                    <source src="../assets/videos/exploratory.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <h4>Exploratory Grasping</h4>
+                            <p>Adaptive exploration for uncertain objects.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <img src="../assets/images/spectgrasp.jpg" alt="Spectral correlation grasping" class="work-image">
+                            </div>
+                            <h4>Grasping by Spectral Correlation</h4>
+                            <p>Correlation-based scoring for grasp ranking.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <img src="../assets/images/tig.jpg" alt="Task-informed grasping" class="work-image">
+                            </div>
+                            <h4>Task-informed Grasping</h4>
+                            <p>Task-aware grasp selection for success.</p>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="research-section">
+                    <div class="research-header">
+                        <h3>Computer Vision & Perception</h3>
+                        <p>3D vision under low light, dust, and radiation.</p>
+                    </div>
+                    <div class="research-works">
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-cube"></i></div>
+                            </div>
+                            <h4>3D Reconstruction</h4>
+                            <p>Accurate models from sparse data.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-crosshairs"></i></div>
+                            </div>
+                            <h4>Visual Servoing</h4>
+                            <p>Closed-loop visual control.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-low-vision"></i></div>
+                            </div>
+                            <h4>Texture-less Detection</h4>
+                            <p>Reliable detection in harsh scenes.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-wave-square"></i></div>
+                            </div>
+                            <h4>Sensor Fusion</h4>
+                            <p>Radar/LiDAR/vision integration.</p>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="research-section">
+                    <div class="research-header">
+                        <h3>Human-Robot Teaming</h3>
+                        <p>Shared control for safety-critical operations.</p>
+                    </div>
+                    <div class="research-works">
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-sliders-h"></i></div>
+                            </div>
+                            <h4>Variable Autonomy</h4>
+                            <p>Adaptive AI assistance levels.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-headset"></i></div>
+                            </div>
+                            <h4>Teleoperation UX</h4>
+                            <p>Operator-centered interfaces.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-bullseye"></i></div>
+                            </div>
+                            <h4>Intent Recognition</h4>
+                            <p>Predictive operator support.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-hand-sparkles"></i></div>
+                            </div>
+                            <h4>Haptic Feedback</h4>
+                            <p>Safer manipulation at distance.</p>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="research-section">
+                    <div class="research-header">
+                        <h3>AI & Machine Learning</h3>
+                        <p>Learning-based autonomy for complex tasks.</p>
+                    </div>
+                    <div class="research-works">
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-brain"></i></div>
+                            </div>
+                            <h4>Reinforcement Learning</h4>
+                            <p>Policy learning for contact tasks.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-random"></i></div>
+                            </div>
+                            <h4>Sim-to-Real Transfer</h4>
+                            <p>Bridging simulation and reality.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-atom"></i></div>
+                            </div>
+                            <h4>Physics-informed AI</h4>
+                            <p>Structured models for robustness.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-comment-dots"></i></div>
+                            </div>
+                            <h4>Vision-Language Models</h4>
+                            <p>High-level task understanding.</p>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="research-section">
+                    <div class="research-header">
+                        <h3>Sustainable Robotics (ReLiB)</h3>
+                        <p>Autonomous disassembly for battery recycling.</p>
+                    </div>
+                    <div class="research-works">
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-car-battery"></i></div>
+                            </div>
+                            <h4>Battery Pack Disassembly</h4>
+                            <p>Automated teardown workflows.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-search"></i></div>
+                            </div>
+                            <h4>Component Identification</h4>
+                            <p>Vision-led classification.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-layer-group"></i></div>
+                            </div>
+                            <h4>Material Separation</h4>
+                            <p>Clean sorting for recycling.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-shield-alt"></i></div>
+                            </div>
+                            <h4>Safety-aware Autonomy</h4>
+                            <p>Risk-aware planning and control.</p>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="research-section">
+                    <div class="research-header">
+                        <h3>Nuclear Decommissioning (NCNR)</h3>
+                        <p>Robotics for hazardous waste processing.</p>
+                    </div>
+                    <div class="research-works">
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-filter"></i></div>
+                            </div>
+                            <h4>Waste Sorting</h4>
+                            <p>Autonomous segregation pipelines.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-cut"></i></div>
+                            </div>
+                            <h4>Remote Cutting</h4>
+                            <p>Precision laser cutting systems.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-hard-hat"></i></div>
+                            </div>
+                            <h4>Radiation-hardened Design</h4>
+                            <p>Resilience in extreme settings.</p>
+                        </article>
+                        <article class="work-card">
+                            <div class="work-media">
+                                <div class="thumb-placeholder"><i class="fas fa-check-circle"></i></div>
+                            </div>
+                            <h4>Deployment Validation</h4>
+                            <p>Field trials and certification.</p>
+                        </article>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Extreme Robotics Lab</h3>
+                <p>School of Metallurgy and Materials<br>University of Birmingham<br>Edgbaston, Birmingham, B15 2TT</p>
+            </div>
+            <div class="footer-social" aria-label="Social links">
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/" aria-label="X">
+                    <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.1 2H21l-6.3 7.2L22 22h-5.8l-4.5-6.2L6.1 22H3.2l6.7-7.7L2 2h5.9l4.1 5.6L18.1 2zm-1 18h1.6L7 4h-1.7l11.8 16z"></path>
+                    </svg>
+                </a>
+                <a href="https://github.com/" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Extreme Robotics Lab.</p>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+    <a href="#top" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/@barba/prefetch"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
