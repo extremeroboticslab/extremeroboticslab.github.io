@@ -683,6 +683,10 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
     background-image: url('../assets/images/team-bg.jpg');
 }
 
+.header-publications {
+    background-image: url('../assets/images/publications-bg.jpg');
+}
+
 /* Grid Layout for Themes */
 .research-grid {
     display: grid;
@@ -825,9 +829,43 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
     gap: 24px;
 }
 
+.publications-layout {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+}
+
+.pub-years {
+    position: sticky;
+    top: calc(var(--nav-height) + 20px);
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pub-years a {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #555;
+    background: #f4f4f4;
+    font-weight: 600;
+}
+
+.pub-years a:hover {
+    color: var(--uob-red);
+    background: #f8e9ed;
+}
+
 .pub-year h2 {
     margin: 0 0 12px;
-    color: var(--rich-black);
+    color: var(--uob-red);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.pub-year {
+    scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
 .pub-list {
@@ -845,6 +883,17 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
     display: block;
     color: #777;
     font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    .publications-layout {
+        grid-template-columns: 1fr;
+    }
+    .pub-years {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
 /* --- Press Page --- */
@@ -871,6 +920,136 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
     margin: 0 0 10px;
     color: #777;
     font-size: 0.95rem;
+}
+
+/* --- Team Page --- */
+.team-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.team-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 18px;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #ededed;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.team-photo {
+    width: 140px;
+    height: 180px;
+    border-radius: 10px;
+    background: #f0f0f0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a9a9a;
+    font-size: 2rem;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.placeholder-photo {
+    background: linear-gradient(135deg, #f2f2f2, #e6e6e6);
+}
+
+.team-details h3 {
+    margin: 0 0 6px;
+    color: var(--rich-black);
+    font-size: 1.16rem;
+}
+
+.team-lead {
+    font-weight: 700;
+    font-style: italic;
+}
+
+.team-role {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.team-row.compact .team-photo {
+    width: 110px;
+    height: 110px;
+}
+
+.team-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 28px 0;
+}
+
+.team-section .section-heading,
+.team-section .team-list {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.team-section-senior { background: #ffffff; }
+.team-section-phd { background: #f8f6f2; }
+.team-section-alumni { background: #f3f3f3; }
+
+.team-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 6px;
+    font-size: 0.88rem;
+    color: #777;
+}
+
+.team-links a {
+    color: #777;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.team-links a:hover {
+    color: var(--uob-red);
+}
+
+.team-links i {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .team-list {
+        grid-template-columns: 1fr;
+    }
+    .team-row {
+        grid-template-columns: 1fr;
+    }
+    .team-photo {
+        width: 100%;
+        height: 220px;
+    }
+    .team-row.compact .team-photo {
+        height: 180px;
+    }
 }
 
 /* Add this to style.css */
