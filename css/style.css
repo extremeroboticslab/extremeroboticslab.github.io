@@ -1041,6 +1041,17 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
     padding: 0 20px;
 }
 
+.team-section .section-heading {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.team-section .section-heading::after {
+    left: 20px;
+    transform: none;
+}
+
 .team-section-senior { background: #ffffff; }
 .team-section-phd { background: #f8f6f2; }
 .team-section-assoc { background: #ffffff; }
