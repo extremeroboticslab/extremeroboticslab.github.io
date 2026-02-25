@@ -72,7 +72,11 @@ function initAutoVideos() {
     autoVideoObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             const video = entry.target;
+            const start = parseFloat(video.dataset.start || '');
             if (entry.isIntersecting) {
+                if (!Number.isNaN(start) && video.currentTime < start - 0.1) {
+                    video.currentTime = start;
+                }
                 const playPromise = video.play();
                 if (playPromise && typeof playPromise.catch === 'function') {
                     playPromise.catch(() => {});
@@ -84,7 +88,21 @@ function initAutoVideos() {
     }, { threshold: 0.5 });
 
     autoVideos.forEach((video) => {
+        const start = parseFloat(video.dataset.start || '');
+        if (!Number.isNaN(start)) {
+            video.addEventListener('loadedmetadata', () => {
+                if (video.currentTime < start - 0.1) {
+                    video.currentTime = start;
+                }
+            });
+            video.addEventListener('timeupdate', () => {
+                if (video.currentTime < start - 0.1) {
+                    video.currentTime = start;
+                }
+            });
+        }
         video.muted = true;
+        video.loop = true;
         video.playsInline = true;
         autoVideoObserver.observe(video);
     });

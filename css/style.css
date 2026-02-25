@@ -120,19 +120,27 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6px;
+    padding: 0 2px;
 }
 
 .brand-area {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .logo-img {
-    height: 46px; /* Slightly larger logo */
+    height: 40px; /* Slightly smaller logo */
     width: auto;
     display: block;
+}
+
+.uob-logo {
+    height: 34px;
+}
+
+.erl-logo {
+    height: 42px;
 }
 
 /* Divider between logos */
@@ -295,7 +303,31 @@ nav {
         radial-gradient(1200px 300px at 20% 0%, rgba(128, 0, 32, 0.08), rgba(128, 0, 32, 0)),
         linear-gradient(180deg, #f7f7f7 0%, #efefef 100%);
 }
-.section-heading { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--rich-black); }
+
+.section-heading {
+    display: inline-block;
+    text-align: center;
+    font-size: 2.1rem;
+    margin: 0 auto 32px;
+    color: var(--rich-black);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 64px;
+    height: 3px;
+    background: var(--uob-red);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
 .news-wrapper {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -408,6 +440,7 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
     .navbar { overflow: visible; }
     .brand-area { gap: 10px; }
     .logo-img { height: 34px; }
+    .erl-logo { height: 36px; }
     .vertical-divider { height: 18px; }
     .director-title { font-size: 2.5rem; }
     .director-subtitle { font-size: 1.1rem; }
@@ -1010,6 +1043,7 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
 
 .team-section-senior { background: #ffffff; }
 .team-section-phd { background: #f8f6f2; }
+.team-section-assoc { background: #ffffff; }
 .team-section-alumni { background: #f3f3f3; }
 
 .team-links {
@@ -1394,16 +1428,32 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
 .research-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     gap: 8px;
     margin-bottom: 16px;
 }
 
 .research-header h3 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.6rem;
     color: var(--rich-black);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.research-header h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 48px;
+    height: 3px;
+    background: var(--uob-red);
+    transform: none;
+    border-radius: 2px;
 }
 
 .research-header p {
@@ -1419,19 +1469,22 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
 }
 
 .research-works {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
 }
 
 .work-card {
     background: #f9f9f9;
     border: 1px solid #ededed;
     border-radius: 10px;
-    padding: 12px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 0 1 calc(20% - 16px);
+    max-width: calc(20% - 16px);
 }
 
 .work-media {
@@ -1529,5 +1582,22 @@ footer { background: #1a1a1a; color: #888; padding: 40px 0; }
 @media (max-width: 900px) {
     .research-section {
         padding: 18px;
+    }
+    .research-works {
+        justify-content: center;
+    }
+    .work-card {
+        flex-basis: calc(50% - 16px);
+        max-width: calc(50% - 16px);
+    }
+}
+
+@media (max-width: 600px) {
+    .research-works {
+        justify-content: center;
+    }
+    .work-card {
+        flex-basis: 100%;
+        max-width: 100%;
     }
 }
