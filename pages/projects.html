@@ -22,7 +22,7 @@
         <div class="container nav-container">
             <div class="brand-area">
                 <a href="https://www.birmingham.ac.uk" target="_blank">
-                    <img src="../assets/UoB.png" alt="University of Birmingham" class="logo-img uob-logo">
+                    <img src="../assets/UoB2.png" alt="University of Birmingham" class="logo-img uob-logo">
                 </a>
                 <span class="vertical-divider"></span>
                 <a href="../index.html">
@@ -38,14 +38,20 @@
                     <li><a href="projects.html" class="active">Projects</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="press.html">Press</a></li>
-                    <li><a href="team.html">Team</a></li>
+                    <li class="nav-item has-submenu">
+                        <a href="team.html">Team</a>
+                        <ul class="submenu">
+                            <li><a href="team.html#current">Current</a></li>
+                            <li><a href="team.html#alumni">Alumni</a></li>
+                        </ul>
+                    </li>
                     <li><a href="../index.html#contact" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="page-header" id="top">
+    <section class="page-header header-projects" id="top">
         <div class="container">
             <h1 class="page-title">Projects</h1>
             <p class="page-subtitle">Flagship programs, field trials, and industry collaborations.</p>
@@ -54,66 +60,164 @@
 
     <section class="section-padding">
         <div class="container">
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-media">
-                        <div class="thumb-placeholder">
-                            <i class="fas fa-radiation"></i>
-                        </div>
-                    </div>
-                    <h3>NCNR: Nuclear Decommissioning</h3>
-                    <p>Autonomous sorting, cutting, and inspection in hazardous nuclear environments.</p>
-                </article>
+            <div class="projects-split">
+                <aside class="projects-sidebar">
+                    <h2 class="projects-sidebar-title">Project Subjects</h2>
+                    <ul class="projects-subjects">
+                        <li><a href="#all" class="active" data-filter="all">All Projects</a></li>
+                        <li><a href="#nuclear" data-filter="nuclear">Nuclear Decommissioning</a></li>
+                        <li><a href="#ev-recycling" data-filter="ev-recycling">EV Battery Recycling</a></li>
+                        <li><a href="#grasping" data-filter="grasping">Autonomous Grasping</a></li>
+                        <li><a href="#vision" data-filter="vision">3D Vision Systems</a></li>
+                        <li><a href="#teaming" data-filter="teaming">Human-Robot Teaming</a></li>
+                        <li><a href="#deployments" data-filter="deployments">Field Deployments</a></li>
+                    </ul>
+                </aside>
 
-                <article class="project-card">
-                    <div class="project-media">
-                        <div class="thumb-placeholder">
-                            <i class="fas fa-recycle"></i>
+                <div class="projects-list">
+                    <article class="project-line" id="nuclear" data-categories="nuclear ev-recycling">
+                        <a class="project-line-media" href="https://rebelion-project.eu/" target="_blank" rel="noopener" aria-label="Open REBELION project page">
+                            <video class="project-video" autoplay muted loop playsinline>
+                                <source src="../assets/videos/rebelion.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                        <div class="project-line-meta">
+                            <h3>REBELION</h3>
+                            <ul class="project-meta-list">
+                                <li><span>PI</span><strong>Rustam Stolkin</strong></li>
+                                <li><span>Funder</span><strong>European Union</strong></li>
+                                <li><span>Funding</span><strong>≈ €5 million</strong></li>
+                            </ul>
+                            <img src="../assets/images/eu_funded.jpg" alt="European Union funding logo" class="project-funder-logo">
                         </div>
-                    </div>
-                    <h3>ReLiB: Battery Recycling Robotics</h3>
-                    <p>Robotic disassembly of EV battery packs for safe, scalable recycling.</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-media">
-                        <div class="thumb-placeholder">
-                            <i class="fas fa-hand-robot"></i>
+                        <p class="project-line-desc">
+                            This project addresses the waste management challenges posed by lithium-ion batteries (LIBs) used in electric mobility. After their second life, recycling represents not only the most environmentally friendly alternative for batteries, but also a natural and economic resource since the raw materials contained in LIBs can be valorised for further manufacturing. This is particularly relevant in the EU, which is a net importer of critical raw materials while up to 40% of the EVs are sold in Europe. Therefore, a solid recycling industry can become the European mining equivalent, promoting both environmental and economic benefits to the EU region.
+                        </p>
+                    </article>
+                    <article class="project-line" id="longops" data-categories="nuclear grasping">
+                        <a class="project-line-media" href="https://www.ukaea.org/wp-content/uploads/2025/10/ukaea-longops-project-report-2025.pdf" target="_blank" rel="noopener" aria-label="Open LongOps Motion Planning project report">
+                            <img src="../assets/images/longops-result.jpg" alt="LongOps Motion Planning preview" class="project-preview-img">
+                        </a>
+                        <div class="project-line-meta">
+                            <h3>LongOps Motion Planning</h3>
+                            <ul class="project-meta-list">
+                                <li><span>PI</span><strong>Rustam Stolkin; Naresh Marturi</strong></li>
+                                <li><span>Funder</span><strong>InnovateUK, UKAEA</strong></li>
+                                <li><span>Funding</span><strong>£180,000</strong></li>
+                            </ul>
+                            <img src="../assets/images/innovateuk.png" alt="InnovateUK logo" class="project-funder-logo">
                         </div>
-                    </div>
-                    <h3>Autonomous Grasping</h3>
-                    <p>Model-free grasping and manipulation for unstructured industrial tasks.</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-media">
-                        <div class="thumb-placeholder">
-                            <i class="fas fa-eye"></i>
+                        <p class="project-line-desc">
+                            Advanced motion planning and control of long-reach high-degree-of-freedom robot arm. This project addressed Sellafield, TEPCO, and UKAEA’s requirements for computational methods for assisting in control of many-jointed long-reach manipulators. The key challenge was developing algorithms which can automatically plan exceedingly complex motions, of large numbers of joints, to deliver a desired end-effector motion, while also avoiding collisions with obstacles. A secondary challenge was to show how such obstacles can be captured via a wrist mounted camera using 3D computer vision concepts, and how these visually acquired obstacles can be incorporated into the motion planner.
+                        </p>
+                    </article>
+                    <article class="project-line" id="pe-grogam" data-categories="grasping">
+                        <a class="project-line-media" href="#" target="_blank" rel="noopener" aria-label="Open Pe-GRoGAM project page">
+                            <img src="../assets/images/tbd.jpg" alt="Pe-GRoGAM project preview" class="project-preview-img">
+                        </a>
+                        <div class="project-line-meta">
+                            <h3>Pe-GRoGAM</h3>
+                            <ul class="project-meta-list">
+                                <li><span>PI</span><strong>Rustam Stolkin</strong></li>
+                                <li><span>Funder</span><strong>EPSRC</strong></li>
+                                <li><span>Funding</span><strong>£347,725</strong></li>
+                            </ul>
+                            <img src="../assets/images/ukri-epsrc.png" alt="UKRI EPSRC logo" class="project-funder-logo">
                         </div>
-                    </div>
-                    <h3>3D Vision for Extreme Environments</h3>
-                    <p>Perception systems resilient to smoke, dust, and low-light conditions.</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-media">
-                        <div class="thumb-placeholder">
-                            <i class="fas fa-users-cog"></i>
+                        <p class="project-line-desc">
+                            Perception-guided robust and reproducible robotic grasping and manipulation.
+                        </p>
+                    </article>
+                    <article class="project-line" id="ncnr" data-categories="nuclear grasping vision teaming deployments">
+                        <a class="project-line-media" href="#" target="_blank" rel="noopener" aria-label="Open NCNR project page">
+                            <video class="project-video" autoplay muted loop playsinline>
+                                <source src="../assets/videos/ncnrvid.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                        <div class="project-line-meta">
+                            <h3>National Centre for Nuclear Robotics (NCNR)</h3>
+                            <ul class="project-meta-list">
+                                <li><span>PI + Director</span><strong>Rustam Stolkin</strong></li>
+                                <li><span>Funder</span><strong>UKRI EPSRC</strong></li>
+                                <li><span>Funding</span><strong>£42 million (including industry contributions)</strong></li>
+                            </ul>
+                            <img src="../assets/images/ukri-epsrc.png" alt="UKRI EPSRC logo" class="project-funder-logo">
                         </div>
-                    </div>
-                    <h3>Human-Robot Teaming</h3>
-                    <p>Shared-control interfaces for safe, high-stakes teleoperation.</p>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-media">
-                        <div class="thumb-placeholder">
-                            <i class="fas fa-robot"></i>
+                        <p class="project-line-desc">
+                            The National Centre for Nuclear Robotics, established in 2018, is a consortium of eight universities and affiliated partners tasked with finding fresh solutions to the well-established problem of nuclear waste. Nuclear decommissioning and the safe disposal of nuclear waste is a global problem of enormous proportions.
+                        </p>
+                    </article>
+                    <article class="project-line" id="relib" data-categories="ev-recycling">
+                        <a class="project-line-media" href="https://relib.ac.uk/new-relib-publication-focuses-on-use-of-robotics-in-ev-sustainability-2/" target="_blank" rel="noopener" aria-label="Open ReLiB project page">
+                            <img src="../assets/images/relibrob.jpg" alt="ReLiB project preview" class="project-image">
+                        </a>
+                        <div class="project-line-meta">
+                            <h3>Reuse and Recycling of Lithium-ion Batteries (ReLiB)</h3>
+                            <ul class="project-meta-list">
+                                <li><span>Robotics Lead and Co-I</span><strong>Rustam Stolkin</strong></li>
+                                <li><span>Funder</span><strong>Faraday Institution</strong></li>
+                                <li><span>Funding</span><strong>TBD</strong></li>
+                            </ul>
+                            <img src="../assets/images/faraday.png" alt="Faraday Institution logo" class="project-funder-logo">
                         </div>
-                    </div>
-                    <h3>Field Trials & Deployments</h3>
-                    <p>Real-world validation at nuclear and industrial partner sites.</p>
-                </article>
+                        <p class="project-line-desc">
+                            The overall aim of the ReLiB project is to understand the conditions required to ensure the sustainable management of lithium-ion batteries when they reach the end of their useful life in electric vehicles. ERL lead the automation of the ReLiB project, which focuses on robotising the process of testing, disassembly, and sorting EV batteries. The team have developed adaptive control strategies for multi-robots to collaboratively disassemble various EV battery packs from pack level to cell level. The Sustainable Robotic Centre (SRC) is the hearth of the ERL's pioneering industrial scale roboti
+                        </p>
+                    </article>
+                    <article class="project-line" id="romans" data-categories="nuclear grasping">
+                        <a class="project-line-media" href="https://www.h2020romans.org/" target="_blank" rel="noopener" aria-label="Open RoMaNS project page">
+                            <img src="../assets/images/romans.jpg" alt="RoMaNS project preview" class="project-preview-img">
+                        </a>
+                        <div class="project-line-meta">
+                            <h3>Robotic Manipulation for Nuclear Sort and Segregation (H2020 RoMaNS)</h3>
+                            <ul class="project-meta-list">
+                                <li><span>PI</span><strong>Rustam Stolkin (leader)</strong></li>
+                                <li><span>Funder</span><strong>European Union H2020</strong></li>
+                                <li><span>Funding</span><strong>EUR 6.8 million</strong></li>
+                            </ul>
+                            <img src="../assets/images/eu_funded.jpg" alt="European Union funding logo" class="project-funder-logo">
+                        </div>
+                        <p class="project-line-desc">
+                            The RoMaNS (Robotic Manipulation for Nuclear Sort and Segregation) project is a European Union Horizon 2020 initiative designed to improve nuclear waste processing efficiency. It developed advanced, radiation-resilient robotics, specifically haptic, master-slave systems, to enable autonomous and shared control for sorting and handling hazardous, complex materials.
+                        </p>
+                    </article>
+                    <article class="project-line" id="rne" data-categories="nuclear">
+                        <a class="project-line-media" href="https://uomrobotics.com/collaborations/rne.html" target="_blank" rel="noopener" aria-label="Open Robotics for Nuclear Environments project page">
+                            <img src="../assets/images/rne.jpg" alt="Robotics for Nuclear Environments preview" class="project-preview-img">
+                        </a>
+                        <div class="project-line-meta">
+                            <h3>Robotics for Nuclear Environments (RNE)</h3>
+                            <ul class="project-meta-list">
+                                <li><span>UoB PI</span><strong>Rustam Stolkin</strong></li>
+                                <li><span>Funder</span><strong>EPSRC Programme Grant</strong></li>
+                                <li><span>Funding</span><strong>£5.5 million (£2 million to UoB-ERL)</strong></li>
+                            </ul>
+                            <img src="../assets/images/ukri-epsrc.png" alt="UKRI EPSRC logo" class="project-funder-logo">
+                        </div>
+                        <p class="project-line-desc">
+                            RNE was a five-year collaborative research programme that brought together robotic and nuclear engineering experts to make the step changes in RAS capability that were needed to overcome the challenges facing the UK and international nuclear industries.
+                        </p>
+                    </article>
+                    <article class="project-line" id="uk-korea" data-categories="nuclear">
+                        <div class="project-line-media project-preview-placeholder" aria-label="UK-Korea collaboration project preview">
+                            <div class="thumb-placeholder">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                        <div class="project-line-meta">
+                            <h3>UK-Korea Collaboration Project</h3>
+                            <ul class="project-meta-list">
+                                <li><span>PI</span><strong>Rustam Stolkin</strong></li>
+                                <li><span>Funder</span><strong>EPSRC</strong></li>
+                                <li><span>Funding</span><strong>£556,624</strong></li>
+                            </ul>
+                            <img src="../assets/images/ukri-epsrc.png" alt="UKRI EPSRC logo" class="project-funder-logo">
+                        </div>
+                        <p class="project-line-desc">
+                            Robotic system for retrieval of contaminated materials from hazardous zones. This is a collaborative project, between UK (University of Birmingham and National Nuclear Laboratory) and South Korea (Korea Atomic Energy Research Institute), which is developing new robotics technologies for nuclear remediation. This project is an initiative of the UK-Korea Civil Nuclear Collaboration Program, which has been jointly funded by both countries.
+                        </p>
+                    </article>
+                </div>
             </div>
         </div>
     </section>

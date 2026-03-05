@@ -318,11 +318,43 @@ function initWorkLightbox() {
     });
 }
 
+function initProjectsFilter() {
+    const filterLinks = document.querySelectorAll('.projects-subjects [data-filter]');
+    const projectItems = document.querySelectorAll('.project-line');
+    if (filterLinks.length === 0 || projectItems.length === 0) return;
+
+    function setActive(link) {
+        filterLinks.forEach((item) => item.classList.remove('active'));
+        link.classList.add('active');
+    }
+
+    function applyFilter(filterValue) {
+        projectItems.forEach((item) => {
+            if (filterValue === 'all') {
+                item.style.display = '';
+                return;
+            }
+            const categories = (item.dataset.categories || '').split(' ');
+            item.style.display = categories.includes(filterValue) ? '' : 'none';
+        });
+    }
+
+    filterLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const filterValue = link.dataset.filter || 'all';
+            setActive(link);
+            applyFilter(filterValue);
+        });
+    });
+}
+
 function initCommon() {
     initBackToTop();
     initMobileMenu();
     initAutoVideos();
     initWorkLightbox();
+    initProjectsFilter();
 }
 
 function initHeroVideo() {
