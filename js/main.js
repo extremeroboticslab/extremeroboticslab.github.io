@@ -355,6 +355,31 @@ function initCommon() {
     initAutoVideos();
     initWorkLightbox();
     initProjectsFilter();
+    initNewsCarousel();
+}
+
+function initNewsCarousel() {
+    const carousel = document.querySelector('.news-carousel');
+    if (!carousel) return;
+    const track = carousel.querySelector('.news-track');
+    const prev = carousel.querySelector('.news-prev');
+    const next = carousel.querySelector('.news-next');
+    if (!track || !prev || !next) return;
+
+    function getStep() {
+        const card = track.querySelector('.news-card');
+        if (!card) return 0;
+        const gap = parseFloat(getComputedStyle(track).gap || '0');
+        return card.getBoundingClientRect().width + gap;
+    }
+
+    prev.addEventListener('click', () => {
+        track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+        track.scrollBy({ left: getStep(), behavior: 'smooth' });
+    });
 }
 
 function initHeroVideo() {
