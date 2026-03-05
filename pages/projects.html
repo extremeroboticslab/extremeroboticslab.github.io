@@ -68,14 +68,15 @@
                         <li><a href="#nuclear" data-filter="nuclear">Nuclear Decommissioning</a></li>
                         <li><a href="#ev-recycling" data-filter="ev-recycling">EV Battery Recycling</a></li>
                         <li><a href="#grasping" data-filter="grasping">Autonomous Grasping</a></li>
-                        <li><a href="#vision" data-filter="vision">3D Vision Systems</a></li>
-                        <li><a href="#teaming" data-filter="teaming">Human-Robot Teaming</a></li>
-                        <li><a href="#deployments" data-filter="deployments">Field Deployments</a></li>
+                        <li><a href="#3d-slam" data-filter="3d-slam">3D SLAM</a></li>
+                        <li><a href="#motion-planning" data-filter="motion-planning">Motion Planning</a></li>
+                        <li><a href="#3d-vision" data-filter="3d-vision">3D Vision</a></li>
+                        <li><a href="#haptics-shared-control" data-filter="haptics-shared-control">Haptics Shared-Control</a></li>
                     </ul>
                 </aside>
 
                 <div class="projects-list">
-                    <article class="project-line" id="nuclear" data-categories="nuclear ev-recycling">
+                    <article class="project-line" id="nuclear" data-categories="ev-recycling">
                         <a class="project-line-media" href="https://rebelion-project.eu/" target="_blank" rel="noopener" aria-label="Open REBELION project page">
                             <video class="project-video" autoplay muted loop playsinline>
                                 <source src="../assets/videos/rebelion.mp4" type="video/mp4">
@@ -94,7 +95,7 @@
                             This project addresses the waste management challenges posed by lithium-ion batteries (LIBs) used in electric mobility. After their second life, recycling represents not only the most environmentally friendly alternative for batteries, but also a natural and economic resource since the raw materials contained in LIBs can be valorised for further manufacturing. This is particularly relevant in the EU, which is a net importer of critical raw materials while up to 40% of the EVs are sold in Europe. Therefore, a solid recycling industry can become the European mining equivalent, promoting both environmental and economic benefits to the EU region.
                         </p>
                     </article>
-                    <article class="project-line" id="longops" data-categories="nuclear grasping">
+                    <article class="project-line" id="longops" data-categories="nuclear grasping 3d-slam motion-planning">
                         <a class="project-line-media" href="https://www.ukaea.org/wp-content/uploads/2025/10/ukaea-longops-project-report-2025.pdf" target="_blank" rel="noopener" aria-label="Open LongOps Motion Planning project report">
                             <img src="../assets/images/longops-result.jpg" alt="LongOps Motion Planning preview" class="project-preview-img">
                         </a>
@@ -110,24 +111,7 @@
                         <p class="project-line-desc">
                             Advanced motion planning and control of long-reach high-degree-of-freedom robot arm. This project addressed Sellafield, TEPCO, and UKAEA’s requirements for computational methods for assisting in control of many-jointed long-reach manipulators. The key challenge was developing algorithms which can automatically plan exceedingly complex motions, of large numbers of joints, to deliver a desired end-effector motion, while also avoiding collisions with obstacles. A secondary challenge was to show how such obstacles can be captured via a wrist mounted camera using 3D computer vision concepts, and how these visually acquired obstacles can be incorporated into the motion planner.
                         </p>
-                    </article>
-                    <article class="project-line" id="pe-grogam" data-categories="grasping">
-                        <a class="project-line-media" href="#" target="_blank" rel="noopener" aria-label="Open Pe-GRoGAM project page">
-                            <img src="../assets/images/tbd.jpg" alt="Pe-GRoGAM project preview" class="project-preview-img">
-                        </a>
-                        <div class="project-line-meta">
-                            <h3>Pe-GRoGAM</h3>
-                            <ul class="project-meta-list">
-                                <li><span>PI</span><strong>Rustam Stolkin</strong></li>
-                                <li><span>Funder</span><strong>EPSRC</strong></li>
-                                <li><span>Funding</span><strong>£347,725</strong></li>
-                            </ul>
-                            <img src="../assets/images/ukri-epsrc.png" alt="UKRI EPSRC logo" class="project-funder-logo">
-                        </div>
-                        <p class="project-line-desc">
-                            Perception-guided robust and reproducible robotic grasping and manipulation.
-                        </p>
-                    </article>
+                    </article>                    
                     <article class="project-line" id="ncnr" data-categories="nuclear grasping vision teaming deployments">
                         <a class="project-line-media" href="#" target="_blank" rel="noopener" aria-label="Open NCNR project page">
                             <video class="project-video" autoplay muted loop playsinline>
@@ -164,7 +148,7 @@
                             The overall aim of the ReLiB project is to understand the conditions required to ensure the sustainable management of lithium-ion batteries when they reach the end of their useful life in electric vehicles. ERL lead the automation of the ReLiB project, which focuses on robotising the process of testing, disassembly, and sorting EV batteries. The team have developed adaptive control strategies for multi-robots to collaboratively disassemble various EV battery packs from pack level to cell level. The Sustainable Robotic Centre (SRC) is the hearth of the ERL's pioneering industrial scale roboti
                         </p>
                     </article>
-                    <article class="project-line" id="romans" data-categories="nuclear grasping">
+                    <article class="project-line" id="romans" data-categories="nuclear grasping 3d-vision haptics-shared-control">
                         <a class="project-line-media" href="https://www.h2020romans.org/" target="_blank" rel="noopener" aria-label="Open RoMaNS project page">
                             <img src="../assets/images/romans.jpg" alt="RoMaNS project preview" class="project-preview-img">
                         </a>
@@ -217,6 +201,47 @@
                             Robotic system for retrieval of contaminated materials from hazardous zones. This is a collaborative project, between UK (University of Birmingham and National Nuclear Laboratory) and South Korea (Korea Atomic Energy Research Institute), which is developing new robotics technologies for nuclear remediation. This project is an initiative of the UK-Korea Civil Nuclear Collaboration Program, which has been jointly funded by both countries.
                         </p>
                     </article>
+<article class="project-line" id="pe-grogam" data-categories="grasping">
+                        <a class="project-line-media" href="#" target="_blank" rel="noopener" aria-label="Open Pe-GRoGAM project page">
+                            <img src="../assets/images/tbd.jpg" alt="Pe-GRoGAM project preview" class="project-preview-img">
+                        </a>
+                        <div class="project-line-meta">
+                            <h3>Pe-GRoGAM</h3>
+                            <ul class="project-meta-list">
+                                <li><span>PI</span><strong>Rustam Stolkin</strong></li>
+                                <li><span>Funder</span><strong>EPSRC</strong></li>
+                                <li><span>Funding</span><strong>£347,725</strong></li>
+                            </ul>
+                            <img src="../assets/images/ukri-epsrc.png" alt="UKRI EPSRC logo" class="project-funder-logo">
+                        </div>
+                        <p class="project-line-desc">
+                            Perception-guided robust and reproducible robotic grasping and manipulation.
+                        </p>
+                    </article>
+<article class="project-line" id="coi-projects" data-categories="nuclear">
+                        <div class="project-line-media project-preview-placeholder" aria-label="Co-I projects summary">
+                            <div class="thumb-placeholder">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                        </div>
+                        <div class="project-line-meta">
+                            <h3>Additional Projects (Co-I: Rustam Stolkin)</h3>
+                            <ul class="project-meta-list">
+                                <li><span>RECREATE</span><strong>EPSRC funding (£6.4 million)</strong></li>
+                                <li><span>Met4Tech</span><strong>EPSRC funding (£4.4 million)</strong></li>
+                                <li><span>InnovateUK KTP</span><strong>£250,000 with KUKA</strong></li>
+                                <li><span>PhD Studentships</span><strong>5 nuclear-sponsored, £0.5m+</strong></li>
+                            </ul>
+                        </div>
+                        <p class="project-line-desc">
+                            RECREATE (REcycling CRitical Elements in Advanced Technologies for the Environment) and UKRI Interdisciplinary Circular Economy Centre for Technology Metals (Met4Tech) are EPSRC-funded initiatives. The InnovateUK KTP supports deployment of KUKA industrial robot arms for UK nuclear industry needs. Five nuclear-sponsored robotics/sensing PhD studentships have also been secured.
+                        </p>
+                    </article>
+
+
+                    
+
+                    
                 </div>
             </div>
         </div>
