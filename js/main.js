@@ -1,21 +1,32 @@
 // 1. Initialize Lenis Smooth Scroll
-const lenis = new Lenis({
-    duration: 1.4,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
-    smoothWheel: true,
-    smoothTouch: true,
-    wheelMultiplier: 0.8,
-    touchMultiplier: 1.5,
-    lerp: 0.08,
-});
+let lenis = null;
+if (window.Lenis) {
+    lenis = new Lenis({
+        duration: 1.4,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        smoothTouch: true,
+        wheelMultiplier: 0.8,
+        touchMultiplier: 1.5,
+        lerp: 0.08,
+    });
 
-function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
+} else {
+    lenis = {
+        scrollTo: (value) => {
+            window.scrollTo({ top: value, behavior: 'smooth' });
+        },
+        on: () => {},
+        scroll: window.scrollY,
+    };
 }
-requestAnimationFrame(raf);
 
 let backToTopBtn = null;
 let backToTopBound = false;
@@ -90,22 +101,49 @@ function initAutoVideos() {
     autoVideos.forEach((video) => {
         const start = parseFloat(video.dataset.start || '');
         if (!Number.isNaN(start)) {
-            video.addEventListener('loadedmetadata', () => {
+            const ensureStart = () => {
                 if (video.currentTime < start - 0.1) {
                     video.currentTime = start;
                 }
-            });
-            video.addEventListener('timeupdate', () => {
-                if (video.currentTime < start - 0.1) {
-                    video.currentTime = start;
-                }
-            });
+            };
+            video.addEventListener('loadedmetadata', ensureStart);
+            video.addEventListener('loadeddata', ensureStart);
+            video.addEventListener('play', ensureStart);
+            video.addEventListener('timeupdate', ensureStart);
         }
         video.muted = true;
         video.loop = true;
         video.playsInline = true;
         autoVideoObserver.observe(video);
     });
+}
+
+function initLazyImages() {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    if (lazyImages.length === 0) return;
+
+    const loadImage = (img) => {
+        const src = img.dataset.src;
+        if (!src) return;
+        img.src = src;
+        img.removeAttribute('data-src');
+    };
+
+    if (!('IntersectionObserver' in window)) {
+        lazyImages.forEach((img) => loadImage(img));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const img = entry.target;
+            loadImage(img);
+            obs.unobserve(img);
+        });
+    }, { rootMargin: '200px 0px', threshold: 0.1 });
+
+    lazyImages.forEach((img) => observer.observe(img));
 }
 
 function initCarousel() {
@@ -353,6 +391,7 @@ function initCommon() {
     initBackToTop();
     initMobileMenu();
     initAutoVideos();
+    initLazyImages();
     initWorkLightbox();
     initProjectsFilter();
     initNewsCarousel();
