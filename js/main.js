@@ -146,6 +146,21 @@ function initLazyImages() {
     lazyImages.forEach((img) => observer.observe(img));
 }
 
+function initProjectVideos() {
+    const projectVideos = document.querySelectorAll('.project-video');
+    if (projectVideos.length === 0) return;
+    projectVideos.forEach((video) => {
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.load();
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(() => {});
+        }
+    });
+}
+
 function initCarousel() {
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.prev-btn');
@@ -392,6 +407,7 @@ function initCommon() {
     initMobileMenu();
     initAutoVideos();
     initLazyImages();
+    initProjectVideos();
     initWorkLightbox();
     initProjectsFilter();
     initNewsCarousel();
