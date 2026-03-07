@@ -2276,6 +2276,78 @@ footer {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
+[data-barba-namespace="software"] .research-works {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+[data-barba-namespace="software"] .work-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+[data-barba-namespace="software"] .work-media {
+    flex: 0 0 340px;
+    width: 340px;
+    aspect-ratio: 16 / 9;
+}
+
+[data-barba-namespace="software"] .software-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+[data-barba-namespace="software"] .work-card h4 {
+    margin: 0;
+}
+
+[data-barba-namespace="software"] .work-card p {
+    margin: 0;
+}
+
+[data-barba-namespace="software"] .software-label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: #666;
+}
+
+[data-barba-namespace="software"] .software-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--uob-red);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+[data-barba-namespace="software"] .software-link:hover {
+    color: var(--uob-dark-red);
+}
+
+@media (max-width: 900px) {
+    [data-barba-namespace="software"] .work-card {
+        flex-direction: column;
+        align-items: flex-start;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    [data-barba-namespace="software"] .work-media {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+}
+
+[data-barba-namespace="software"] .work-card {
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
 .research-section:nth-child(odd) .work-card {
     background: #f5f3ef;
 }

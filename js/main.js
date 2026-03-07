@@ -463,6 +463,20 @@ function setActiveContainer(container) {
     if (container) container.classList.add('is-active');
 }
 
+function updateBodyClass(namespace, container) {
+    if (!document.body) return;
+    let resolved = namespace;
+    if (!resolved && container) {
+        resolved = container.getAttribute('data-barba-namespace');
+    }
+    document.body.classList.remove('research-page', 'software-page');
+    if (resolved === 'research') {
+        document.body.classList.add('research-page');
+    } else if (resolved === 'software') {
+        document.body.classList.add('software-page');
+    }
+}
+
 const canUseBarba = window.barba && window.location.protocol !== 'file:';
 
 if (canUseBarba) {
@@ -514,11 +528,13 @@ if (canUseBarba) {
     });
 
     window.barba.hooks.once((data) => {
+        updateBodyClass(data?.next?.namespace, data?.next?.container);
         initCommon();
         applyStagger(data.next.container);
     });
 
     window.barba.hooks.afterEnter((data) => {
+        updateBodyClass(data?.next?.namespace, data?.next?.container);
         if (data?.next?.container) {
             data.next.container.style.transition = '';
             data.next.container.style.opacity = '';

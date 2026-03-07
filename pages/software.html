@@ -3,20 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Extreme Robotics Lab</title>
-
+    <title>Software | Extreme Robotics Lab</title>
     <link rel="stylesheet" href="../css/style.css?v=20260307">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        html.lenis { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto; }
-        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-        .lenis.lenis-stopped { overflow: hidden; }
-    </style>
 </head>
-<body data-barba="wrapper">
-    <div data-barba="container" data-barba-namespace="contact">
+<body data-barba="wrapper" class="software-page">
+    <div data-barba="container" data-barba-namespace="software">
 
     <header class="navbar">
         <div class="container nav-container">
@@ -35,7 +27,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li class="nav-item has-submenu">
-                    <a href="research.html">Research</a>
+                    <a href="research.html" class="active">Research</a>
                     <ul class="submenu">
                         <li><a href="research.html">Overview</a></li>
                         <li><a href="software.html">Software</a></li>
@@ -44,40 +36,44 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="press.html">Press</a></li>
-                    <li><a href="team.html">Team</a></li>
+                    <li class="nav-item has-submenu">
+                        <a href="team.html">Team</a>
+                        <ul class="submenu">
+                            <li><a href="team.html#current">Current</a></li>
+                            <li><a href="team.html#alumni">Alumni</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
 
-    <section class="contact-hero" id="top">
-        <div class="container contact-hero-inner">
-            <div class="contact-heading">
-                <h1 class="page-title">Contact</h1>
-                <p class="page-subtitle">Get in touch with the Extreme Robotics Lab.</p>
-            </div>
-            <div class="contact-intro">
-                <h2>Interested in working at ERL</h2>
-                <p>We accept motivated and strong PhD students with self-funding.</p>
-                <a class="btn-primary contact-cta" href="mailto:r.stolkin@bham.ac.uk?cc=n.marturi@bham.ac.uk">
-                    Write to us
-                </a>
-            </div>
-            <div class="contact-card">
-                <div class="contact-card-header">
-                    <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Lab Address</h3>
-                    <i class="fas fa-map-pin contact-pin" aria-hidden="true"></i>
-                </div>
-                <p>
-                    Extreme Robotics Lab<br>
-                    School of Metallurgy and Materials<br>
-                    University of Birmingham<br>
-                    Edgbaston, Birmingham, B15 2TT
-                </p>
+    <section class="page-header header-research" id="top">
+        <div class="container">
+            <h1 class="page-title">Research Software</h1>
+            <p class="page-subtitle">Tools, codebases, and platforms developed at ERL.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">Software & Open-Source Tools</h2>
+            <div class="research-works">
+                <article class="work-card">
+                    <a class="work-media" href="https://github.com/maximeadjigble/grasplocomo?tab=readme-ov-file" target="_blank" rel="noopener">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="../assets/images/grasplocomo.jpg" alt="GraspLoCoMo preview" class="work-image" loading="lazy" decoding="async">
+                    </a>
+                    <div class="software-details">
+                        <h4>GraspLoCoMo</h4>
+                        <p class="software-label">Open-source grasp planning framework using Local Contact Moments</p>
+                        <p>Open-source grasp ranking and benchmarking framework.</p>
+                        <a class="software-link" href="https://github.com/maximeadjigble/grasplocomo?tab=readme-ov-file" target="_blank" rel="noopener">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -114,8 +110,6 @@
     <a href="#top" class="back-to-top" aria-label="Back to Top">
         <i class="fas fa-arrow-up"></i>
     </a>
-
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/@barba/prefetch"></script>
     <script src="../js/main.js"></script>
