@@ -65,12 +65,49 @@ function initBackToTop() {
 }
 
 function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    if (!hamburger || !navLinks) return;
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-active');
+    if (!navLinks) return;
+    navLinks.classList.remove('nav-active');
+    document.body.classList.remove('nav-open');
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    if (document.body.dataset.navListeners) return;
+    document.addEventListener('click', (event) => {
+        const isMobile = window.innerWidth <= 1024;
+        const toggle = event.target.closest('.hamburger');
+        if (toggle) {
+            const menu = document.querySelector('.nav-links');
+            if (!menu) return;
+            const isOpen = menu.classList.toggle('nav-active');
+            document.body.classList.toggle('nav-open', isOpen);
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            return;
+        }
+
+        if (!isMobile) return;
+
+        const submenuTrigger = event.target.closest('.nav-item.has-submenu > a');
+        if (submenuTrigger) {
+            event.preventDefault();
+            const item = submenuTrigger.closest('.nav-item');
+            if (item) item.classList.toggle('open');
+            return;
+        }
+
+        const navLink = event.target.closest('.nav-links a');
+        if (navLink) {
+            const menu = document.querySelector('.nav-links');
+            if (menu) menu.classList.remove('nav-active');
+            document.body.classList.remove('nav-open');
+            const button = document.querySelector('.hamburger');
+            if (button) button.setAttribute('aria-expanded', 'false');
+            document.querySelectorAll('.nav-item.open').forEach((item) => item.classList.remove('open'));
+        }
     });
+    document.body.dataset.navListeners = 'true';
 }
 
 function initAutoVideos() {

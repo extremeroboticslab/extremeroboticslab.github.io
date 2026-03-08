@@ -599,6 +599,7 @@ footer {
 .footer-social {
     display: flex;
     gap: 12px;
+    min-height: 38px;
 }
 
 .footer-social a {
@@ -608,18 +609,21 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.12);
     color: #f0ede8;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
-.footer-social .x-icon {
+.footer-social .x-icon,
+.footer-social .social-icon,
+.footer-social .social-icon-img {
     width: 18px;
     height: 18px;
-    fill: currentColor;
     display: block;
+    fill: #f0ede8;
+    opacity: 1;
 }
 
 .footer-social a:hover {
@@ -659,6 +663,8 @@ footer {
     .director-title { font-size: 2.5rem; }
     .director-subtitle { font-size: 1.1rem; }
     .hero-caption { font-size: 1rem; }
+    .brand-area { padding-right: 52px; }
+    nav { position: static; }
     .nav-links {
         display: none;
         position: fixed;
@@ -671,9 +677,47 @@ footer {
         padding: 20px;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         z-index: 1001;
+        max-height: calc(100vh - var(--nav-height));
+        overflow-y: auto;
+        align-items: flex-start;
+        gap: 6px;
     }
     .nav-links.nav-active { display: flex; }
-    .hamburger { display: block; }
+    body.nav-open .nav-links { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a { width: 100%; }
+    .nav-item.has-submenu {
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
+        pointer-events: auto;
+    }
+    .submenu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+        display: none;
+        border: 0;
+        box-shadow: none;
+        background: transparent;
+        padding: 6px 0 0 12px;
+        margin: 0;
+        width: 100%;
+    }
+    .nav-item.open .submenu { display: block; }
+    .nav-item.has-submenu:hover .submenu,
+    .nav-item.has-submenu:focus-within .submenu {
+        display: block;
+    }
 }
 
 @media (max-width: 600px) {
