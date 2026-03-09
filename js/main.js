@@ -28,6 +28,20 @@ if (window.Lenis) {
     };
 }
 
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.page-loader');
+    if (!loader) return;
+    const key = 'erlLoaderSeen';
+    if (localStorage.getItem(key) === '1') {
+        document.body.classList.add('page-loaded');
+        return;
+    }
+    setTimeout(() => {
+        document.body.classList.add('page-loaded');
+        localStorage.setItem(key, '1');
+    }, 4000);
+});
+
 let backToTopBtn = null;
 let backToTopBound = false;
 let autoVideoObserver = null;
