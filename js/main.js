@@ -590,6 +590,11 @@ if (canUseBarba) {
             data.next.container.style.transition = '';
             data.next.container.style.opacity = '';
         }
+        if (lenis && typeof lenis.scrollTo === 'function') {
+            lenis.scrollTo(0, { immediate: true });
+        } else {
+            window.scrollTo(0, 0);
+        }
         initCommon();
         applyStagger(data.next.container);
     });

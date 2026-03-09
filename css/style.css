@@ -299,6 +299,20 @@ nav {
     pointer-events: auto;
 }
 
+.nav-item.has-submenu > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-item.has-submenu > a::after {
+    content: '▾';
+    font-size: 0.6rem;
+    color: currentColor;
+    opacity: 0.6;
+    transform: translateY(-1px);
+}
+
 /* Contact Button */
 .btn-contact {
     background: var(--uob-red);
