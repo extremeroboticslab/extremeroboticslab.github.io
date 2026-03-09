@@ -342,6 +342,7 @@ function ensureLightbox() {
     lightboxOverlay.className = 'lightbox-overlay';
     lightboxOverlay.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">x</button><div class="lightbox-content"></div>';
     document.body.appendChild(lightboxOverlay);
+    lightboxOverlay.addEventListener('contextmenu', (event) => event.preventDefault());
     return lightboxOverlay;
 }
 
@@ -355,6 +356,7 @@ function openLightboxFromMedia(media) {
         const img = document.createElement('img');
         img.src = media.getAttribute('src');
         img.alt = media.getAttribute('alt') || '';
+        img.addEventListener('contextmenu', (event) => event.preventDefault());
         content.appendChild(img);
     } else if (media.tagName.toLowerCase() === 'video') {
         const video = document.createElement('video');
@@ -369,6 +371,7 @@ function openLightboxFromMedia(media) {
         video.muted = true;
         video.playsInline = true;
         video.autoplay = true;
+        video.addEventListener('contextmenu', (event) => event.preventDefault());
         content.appendChild(video);
         const playPromise = video.play();
         if (playPromise && typeof playPromise.catch === 'function') {
