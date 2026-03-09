@@ -297,6 +297,9 @@ nav {
     top: 0; left: 0;
     width: 100%; height: 100%;
     object-fit: cover;
+    transform: translateZ(0); /* Forces GPU hardware acceleration */
+    will-change: transform;   /* Tells Firefox to expect movement */
+    backface-visibility: hidden; /* Fixes weird flickering during scroll */
 }
 
 .hero-overlay {
