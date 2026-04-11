@@ -859,6 +859,55 @@ footer {
 .center-quote::before { top: -10px; left: 10px; }
 .center-quote::after { bottom: -18px; right: 10px; }
 
+
+/* About: Who We Are */
+.about-copy {
+    max-width: 920px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-copy p {
+    margin: 0;
+    color: #555;
+    line-height: 1.78;
+    font-size: 1.02rem;
+}
+
+.about-intro {
+    color: #2d2d2d;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 16px 18px;
+    border-left: 4px solid var(--uob-red);
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.about-quote {
+    margin: 4px 0;
+    padding: 18px 22px;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: #2f2f2f;
+    border-left: 4px solid rgba(128, 0, 32, 0.8);
+    background: #faf7f2;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.about-close {
+    margin-top: 10px;
+    padding: 12px 16px;
+    border-left: 4px solid var(--uob-red);
+    background: #f8f1f3;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #3b1a22;
+}
+
+
 /* --- Matterport Responsive Wrapper --- */
 .matterport-wrapper {
     position: relative;
@@ -2582,3 +2631,9 @@ footer {
         max-width: 100%;
     }
 }
+
+
+
+
+
+
